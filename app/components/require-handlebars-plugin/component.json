@@ -1,0 +1,8 @@
+{
+  "name": "require-handlebars-plugin",
+  "version": "0.4.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SlexAxton/require-handlebars-plugin.git"
+  }
+}
