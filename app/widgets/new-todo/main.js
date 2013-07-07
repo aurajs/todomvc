@@ -28,5 +28,5 @@ define(['hbs!./new-todo'], function(template) {
       this.$input = this.$el.find('input');
       return this;
     }
-  }
+  };
 });
