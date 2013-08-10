@@ -14,5 +14,5 @@ define(['hbs!./stats'], function(template) {
     clearCompleted: function() {
       this.sandbox.emit('tasks.clear');
     }
-  }
+  };
 });

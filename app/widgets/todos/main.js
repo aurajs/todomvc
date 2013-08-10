@@ -22,10 +22,9 @@ define(['underscore', 'hbs!./list', 'hbs!./item'], function(_, listTemplate, ite
       var sandbox = this.sandbox;
       var handle  = _.bind(this.handleTaskAction, this);
       _.bindAll(this);
-      var sandbox = this.sandbox;
       _.each(['add', 'destroy', 'toggle'], function(action) {
         sandbox.on('tasks.' + action, handle);
-      })
+      });
       sandbox.on('tasks.clear', this.clearCompleted);
       this.render();
     },
@@ -72,7 +71,7 @@ define(['underscore', 'hbs!./list', 'hbs!./item'], function(_, listTemplate, ite
       var fn = this[action + 'Task'];
       if (fn) {
         task = this.getTask(task);
-        fn && fn(task);
+	fn(task);
         this.getStats();        
       }
     },
@@ -95,10 +94,10 @@ define(['underscore', 'hbs!./list', 'hbs!./item'], function(_, listTemplate, ite
 
     destroyTask: function(task) {
       var view = this.taskViews[task.id];
-      view && view.remove();
+      if(view){view.remove();}
       delete this.tasks[task.id];  
       delete this.taskViews[task.id];
     }
 
-  }
+  };
 });
