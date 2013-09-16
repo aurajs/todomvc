@@ -4,7 +4,7 @@ define({
 
   require: {
     paths: {
-      'backbone.localStorage' : 'components/backbone.localStorage/backbone.localStorage'
+      'backbone.localStorage' : 'bower_components/backbone.localStorage/backbone.localStorage'
     }
   },
 
