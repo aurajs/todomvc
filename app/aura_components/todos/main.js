@@ -21,7 +21,10 @@ define(['underscore', 'hbs!./list', 'hbs!./item'], function(_, listTemplate, ite
       this.taskViews = {};
       var sandbox = this.sandbox;
       var handle  = _.bind(this.handleTaskAction, this);
-      _.bindAll(this);
+      _.bindAll(this, 
+        'render','getTask','getCompletedTasks','getStats','clearCompleted',
+        'handleTaskAction','addTask','toggleTask','destroyTask'
+      );
       _.each(['add', 'destroy', 'toggle'], function(action) {
         sandbox.on('tasks.' + action, handle);
       });
